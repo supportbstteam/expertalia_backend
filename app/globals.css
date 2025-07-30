@@ -1,0 +1,135 @@
+/** main container for stick-footer**/
+.main-container{
+  min-height:calc(100vh - 150px); 
+}
+
+.logo {
+    height: 45px!important;
+    display: inline-block !important;
+    width: auto!important;
+}
+
+/* error */
+form .error {
+  border: 1px solid #F00 !important;
+}
+form .error-msg {
+  color: #F00;
+  font-size: 16px;
+}
+.form-label {
+  margin-bottom: 0px;
+}
+
+.required{  
+  color: red;
+  font-size: 16px;
+  font-weight: bold;  
+}
+.hint{
+  color: #c7c7c7;
+  font-size:14px;  
+}
+.imagebox{
+  position: relative;  
+}
+
+.imagebox i{  
+  color: #ed3c0d;
+  font-size: 22px;
+  cursor: pointer;
+}
+/* disabled */
+input[disabled], 
+select[disabled], 
+textarea[disabled], 
+button[disabled], 
+a[disabled]{
+  background-color: #6c757d !important;
+  background: #6c757d !important;
+  cursor: not-allowed;
+}
+
+/* placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #c7c7c7 !important;
+}
+
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+/* sweetalert2 [start] */
+div:where(.swal2-container) h2:where(.swal2-title) {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: .8em 1em 0;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+  word-wrap: break-word;
+}
+div:where(.swal2-container) .swal2-html-container {
+  z-index: 1;
+  justify-content: center;
+  margin: 0;
+  padding: 1em 1.6em .3em;
+  overflow: auto;
+  color: inherit;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.swal2-modal{
+  padding: 20px;
+}
+div:where(.swal2-container) div:where(.swal2-popup) {
+  width: auto !important;
+}
+/* sweetalert2 [ends] */
+
+#sticky-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 500px;
+    width: 100%;
+}
+.table-card-body{
+    padding: 0 0px 20px;
+}
+.table-thead{
+  background: #6c757d !important;
+  color: #fff;
+}
+.filter-box{
+  background: rgb(221, 232, 228);
+  margin-bottom: 5px;
+}
+.filter-box .card-body{
+  padding: 12px 15px 5px 15px;
+}
+.filter-box input,
+.filter-box select,
+.filter-box button{
+  height: 35px;
+}
+
+.myScrollBar{
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 10px !important;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #eee;
+}
