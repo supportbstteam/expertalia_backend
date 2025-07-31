@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useCallback } from 'react';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 import Link from 'next/link'
 import Image from "next/image";
@@ -12,23 +12,13 @@ import Api from '@/app/_library/Api';
 import AllFunctionClient from '@/app/_library/AllFunctionClient';
 import Pagination from '@/app/_components/common/pagination/Pagination';
 
-const Company_users = () => {
+const Company_users = ({__filterData}) => {
 
   const router = useRouter()
   const pathname = usePathname()
-  const searchParams = useSearchParams()
   const item_per_page = AllFunctionClient.limit()
 
   const MySwal = withReactContent(Swal)  
-
-  const __filterData = {  
-    page: searchParams.get('page') ?? 1,	            
-    first_name: searchParams.get('first_name') ?? '',
-    last_name: searchParams.get('last_name') ?? '',
-    email: searchParams.get('email') ?? '',  
-    phone: searchParams.get('phone') ?? '',  
-    status: searchParams.get('status') ?? '',  
-	}
 
   const [total, set_total] = useState(0)   
   const [data, set_data]   = useState([])

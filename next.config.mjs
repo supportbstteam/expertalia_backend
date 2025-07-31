@@ -33,7 +33,7 @@ const nextConfig = {
   }, 
   eslint: {
     ignoreDuringBuilds: true, // for ignore build error validation
-  }, 
+  },   
   //=== add this for cors header ===
   async headers() {
     return [

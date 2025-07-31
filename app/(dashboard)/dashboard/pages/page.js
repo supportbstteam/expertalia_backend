@@ -8,10 +8,20 @@ export const metadata = {
   description: "",
 };
 
-const Page = () => {
+const Page = async ({ searchParams }) => {
+
+  const mySearch = await searchParams 
+
+  const __filterData = {  
+    page: (mySearch.page) ? mySearch.page :  1,	            
+    name: (mySearch.name) ? mySearch.name : '',
+    slug: (mySearch.slug) ? mySearch.slug : '',  
+    status: (mySearch.status) ? mySearch.status : '',  
+	}
+
   return (
     <> 
-    <Cms_pages />
+    <Cms_pages __filterData={__filterData} />
     </>
   );
 }

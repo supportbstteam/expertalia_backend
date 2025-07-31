@@ -8,10 +8,20 @@ export const metadata = {
   description: "",
 };
 
-const Page = () => {
+const Page = async ({ searchParams }) => {
+  
+  const mySearch = await searchParams 
+
+  const __filterData = {  
+    page: (mySearch.page) ? mySearch.page :  1,	            
+    name: (mySearch.name) ? mySearch.name : '',
+    category_name: (mySearch.category_name) ? mySearch.category_name : '',      
+    status: (mySearch.status) ? mySearch.status : '',  
+	}
+
   return (
     <> 
-    <Services />
+    <Services __filterData={__filterData} />
     </>
   );
 }
