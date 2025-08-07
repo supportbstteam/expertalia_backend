@@ -179,7 +179,7 @@ export async function DELETE(req) {
     const _id = searchParams.get('_id')
 
     try {  
-        const res = await CompanyUser.findByIdAndDelete(_id);
+        const res = await User.findByIdAndDelete(_id);
          return Response.json({            
             message: "data deleted successfully",
         },{status: 200}) 
