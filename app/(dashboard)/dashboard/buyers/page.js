@@ -1,10 +1,7 @@
-
-import Link from 'next/link'
-import Image from "next/image";
-import Companies from "./Companies";
+import Buyers from "./Buyers";
 
 export const metadata = {
-  title: "Companies",
+  title: "Buyers",
   description: "",
 };
 
@@ -14,15 +11,15 @@ const Page = async ({ searchParams }) => {
 
   const __filterData = {
     page: (mySearch.page) ? mySearch.page : 1,
-    name: (mySearch.name) ? mySearch.name : '',
+    first_name: (mySearch.first_name) ? mySearch.first_name : '',
+    last_name: (mySearch.last_name) ? mySearch.last_name : '',
     email: (mySearch.email) ? mySearch.email : '',
-    zipCode: (mySearch.zipCode) ? mySearch.zipCode : '',
     status: (mySearch.status) ? mySearch.status : '',
   }
 
   return (
     <>
-      <Companies __filterData={__filterData} />
+      <Buyers __filterData={__filterData} />
     </>
   );
 }

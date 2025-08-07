@@ -2,7 +2,11 @@ import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema(
   {    
-    name: { 
+    first_name: { 
+      type: String, 
+      required: [true, "Name is required"],
+    },
+    last_name: { 
       type: String, 
       required: [true, "Name is required"],
     },
@@ -27,14 +31,18 @@ const UserSchema = new Schema(
       type: String, 
       required: false,
     },
-    role_id: { 
-      type: String, 
+    // role_id: { 
+    //   type: String, 
+    //   required: true,
+    // },
+    // role: { type: Schema.Types.ObjectId, ref: "Role" },
+    // company: { 
+    //   type: String, 
+    //   required: false,
+    // },
+    userType: {
+      type: String,
       required: true,
-    },
-    role: { type: Schema.Types.ObjectId, ref: "Role" },
-    company: { 
-      type: String, 
-      required: false,
     },
     country: { 
       type: String, 

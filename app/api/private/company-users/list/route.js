@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import connect from "@/app/_library/mongodb";
 import CompanyUser from "@/app/_library/modals/company_user";
+import User from "@/app/_library/modals/user";
 import AllFunctionServer from "@/app/_library/AllFunctionServer";
 import bcryptjs from "bcryptjs";
 
@@ -23,8 +24,8 @@ export async function GET(req){
             filterObj['phone'] = { $regex: '.*' + search_text + '.*' } 
         }       
         
-        const total = await CompanyUser.countDocuments(filterObj).exec();
-        const res = await CompanyUser.find(filterObj,{ password: 0})
+        const total = await User.countDocuments(filterObj).exec();
+        const res = await User.find(filterObj,{ password: 0})
         //.skip(offset)
         //.limit(limit)
         .sort({ name: 1 }) // 1 : asc, -1 : desc

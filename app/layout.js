@@ -1,4 +1,3 @@
-
 //== import external css ===
 import "@/app/assets/vendor/bootstrap/css/bootstrap.min.css";
 import "@/app/assets/vendor/bootstrap-icons/bootstrap-icons.css";
