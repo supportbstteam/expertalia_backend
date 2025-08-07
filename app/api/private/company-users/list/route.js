@@ -16,7 +16,7 @@ export async function GET(req){
         const page = ( searchParams.get('page') == '' ) ? 1 : searchParams.get('page')
         const offset = (page - 1) * limit;       
 
-        let filterObj = {}
+        let filterObj = {userType: 'seller'}
         if(search_text){
             filterObj['first_name'] = { $regex: '.*' + search_text + '.*' } 
             filterObj['last_name'] = { $regex: '.*' + search_text + '.*' } 
